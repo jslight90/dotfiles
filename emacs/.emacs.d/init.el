@@ -150,15 +150,15 @@
     :ensure t
     :diminish (elisp-slime-nav-mode))
 
-(use-package emacs-lisp-mode
-  :ensure t
-  :defer t
-  :preface
-  (defun my-emacs-lisp-mode-hook ()
-    (paredit-mode)
-    (rainbow-delimiters-mode)
-    (elisp-slime-nav-mode))
-  (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook))
+;; (use-package emacs-lisp-mode
+;;   :ensure t
+;;   :defer t
+;;   :preface
+;;   (defun my-emacs-lisp-mode-hook ()
+;;     (paredit-mode)
+;;     (rainbow-delimiters-mode)
+;;     (elisp-slime-nav-mode))
+;;   (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook))
 
 (use-package haml-mode
   :ensure t
