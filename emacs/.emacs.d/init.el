@@ -319,4 +319,10 @@
                           ,load-file-name elapsed)))
             t))
 
+;;; Keyboard Shortcuts
+(global-set-key [C-M-left] #'windmove-left)
+(global-set-key [C-M-right] #'windmove-right)
+(global-set-key [C-M-up] #'windmove-up)
+(global-set-key [C-M-down] #'windmove-down)
+
 ;;; init.el ends here
