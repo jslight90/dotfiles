@@ -18,6 +18,12 @@
 (when (not (window-system))
   (send-string-to-terminal "\033]12;black\007"))
 
+(setq package-install-upgade-built-in t)
+
+(defun seq-keep (function sequence)
+  "Apply FUNCTION to SEQUENCE and return the list of all the non-nil results."
+  (delq nil (seq-map function sequence)))
+
 ;; use-package organizes package configuration
 (eval-when-compile
   (defvar use-package-verbose t)
@@ -320,9 +326,13 @@
             t))
 
 ;;; Keyboard Shortcuts
-(global-set-key [C-M-left] #'windmove-left)
-(global-set-key [C-M-right] #'windmove-right)
-(global-set-key [C-M-up] #'windmove-up)
-(global-set-key [C-M-down] #'windmove-down)
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+;(global-set-key [C-M-left]  #'windmove-left)
+;(global-set-key [C-M-right] #'windmove-right)
+;(global-set-key [C-M-up]    #'windmove-up)
+;(global-set-key [C-M-down]  #'windmove-down)
 
 ;;; init.el ends here
