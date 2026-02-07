@@ -27,10 +27,6 @@
         email = "jslight90@gmail.com";
       };
     };
-    ssh = {
-      enable = true;
-      # TODO
-    };
     keepassxc.enable = true;
     emacs.enable = true;
 
@@ -67,12 +63,6 @@
   #
   home.sessionVariables = {
     EDITOR = "emacs";
-  };
-
-  services.gpg-agent = {
-    enable = true;
-    defaultCacheTtl = 1800;
-    enableSshSupport = true;
   };
 
 }
