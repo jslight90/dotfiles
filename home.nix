@@ -45,10 +45,13 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    ".emacs.d/init.el".source = ./emacs/.emacs.d/init.el;
-    ".emacs.d/custom-file.el".source = ./emacs/.emacs.d/custom-file.el;
-    ".config/keepassxc/keepassxc.ini".source = ./keepassxc/keepassxc.ini;
+  home.file = let
+    dotfiles = "${config.home.homeDirectory}/.config/home-manager";
+    symlink = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
+  in {
+    ".emacs.d/init.el".source = symlink "emacs/.emacs.d/init.el";
+    ".emacs.d/custom-file.el".source = symlink "emacs/.emacs.d/custom-file.el";
+    ".config/keepassxc/keepassxc.ini".source = symlink "keepassxc/keepassxc.ini";
   };
 
   # Home Manager can also manage your environment variables through
@@ -56,15 +59,10 @@
   # shell provided by Home Manager. If you don't want to manage your shell
   # through Home Manager then you have to manually source 'hm-session-vars.sh'
   # located at either
-  #
   #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
   # or
-  #
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
   # or
-  #
   #  /etc/profiles/per-user/jessie/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
