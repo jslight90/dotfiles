@@ -22,10 +22,10 @@
     htop.enable = true;
     git = {
       enable = true;
-      settings.user = {
-        name = "Jessie Slight";
-        email = "jslight90@gmail.com";
-      };
+      settings.user.name = "Jessie Slight";
+      settings.user.email = "jslight90@gmail.com";
+      settings.branch.autoSetupMerge = "always";
+      settings.push.default = "current";
     };
     keepassxc.enable = true;
     emacs.enable = true;
