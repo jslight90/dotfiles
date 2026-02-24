@@ -51,6 +51,9 @@
     ".config/keepassxc/keepassxc.ini".source = symlink "keepassxc/keepassxc.ini";
   };
 
+  # Disable hyprland systemd integration.  Handled by UWSM.
+  wayland.windowManager.hyprland.systemd.enable = false;
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
