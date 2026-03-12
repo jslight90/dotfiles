@@ -49,6 +49,7 @@
     ".emacs.d/init.el".source = symlink "emacs/.emacs.d/init.el";
     ".emacs.d/custom-file.el".source = symlink "emacs/.emacs.d/custom-file.el";
     ".config/keepassxc/keepassxc.ini".source = symlink "keepassxc/keepassxc.ini";
+    ".config/discover_overlay/config.ini".source = symlink "discover_overlay/config.ini";
   };
 
   # Disable hyprland systemd integration.  Handled by UWSM.
