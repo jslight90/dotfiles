@@ -41,6 +41,7 @@
   # environment.
   home.packages = with pkgs; [
     tree
+    powershell
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
