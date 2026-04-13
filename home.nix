@@ -30,6 +30,9 @@
     keepassxc.enable = true;
     emacs.enable = true;
 
+    # KeePassXC integration, even for Chromium-based browsers.
+    firefox.nativeMessagingHosts = [ pkgs.keepassxc ];
+
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
   };
